@@ -4,7 +4,7 @@ import PasswordForgottenScreen from '../views/PasswordForgottenScreen/PasswordFo
 import RegisterScreen from '../views/RegisterScreen/RegisterScreen';
 import { colors, typography } from '../theme/styles';
 import  Icon from 'react-native-vector-icons/Ionicons';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, View, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ListScreen from '../views/ListScreen/ListScreen';
 import CartScreen from '../views/TrolleyScreen/TrolleyScreen';
@@ -97,7 +97,8 @@ export const DashboardNavigator = () => {
 }
 
 export const ProductStackNavigator = () => {
-  const  {appState: { isGrid }, gridOn, gridOff}  = useContext(AppContext)
+  const  {appState: { isGrid, RP }, gridOn, gridOff}  = useContext(AppContext)
+  let rp = RP.toString()
   return(
     <ProductStack.Navigator>
 
@@ -114,6 +115,7 @@ export const ProductStackNavigator = () => {
         },
         headerRight: () => { return(
           <View style={{ flexDirection:'row'}}>
+            <Text style={{ color: colors.white, fontSize: 20, marginTop: 5}}>{rp} RP</Text>
             <TouchableOpacity onPress={ gridOff } style={isGrid ? {...styles.headerButton} : { ...styles.headerButton, ...styles.headerButtonActive }}>
               <Icon name="list-outline" color={isGrid ? colors.marine2 : colors.white } size={24} />
             </TouchableOpacity> 

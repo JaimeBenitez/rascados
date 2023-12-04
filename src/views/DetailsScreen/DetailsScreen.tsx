@@ -20,6 +20,8 @@ const DetailsScreen = ({ route, navigation }: Props) => {
     const { trolleyItems, addProduct, removeProduct } = useContext(AppContext)
 
     const quantity = checkQuantity(product,trolleyItems)
+
+    
     
   return (
     <View>
@@ -41,7 +43,7 @@ const DetailsScreen = ({ route, navigation }: Props) => {
       { quantity > 0 && (
         <View style={{ flexDirection: 'row', alignSelf: 'center'}}>
           <Button text='-' onPressEffect={() => removeProduct(product)} style={{...styles.littleButton, marginRight: 20 }} hasHoverEffect={false}/>
-          <Button text={`${quantity} x ${(quantity * product.price).toFixed(2)}€ en el carrito`} onPressEffect={() => {addProduct(product)}} style={styles.button} hasHoverEffect={false} />
+          <Button text={`${quantity} x ${(quantity * product.price).toFixed(0)} RP en el carrito`} onPressEffect={() => {addProduct(product)}} style={styles.button} hasHoverEffect={false} />
           <Button text='+' onPressEffect={() => addProduct(product)} style={{...styles.littleButton, marginLeft: 20}} hasHoverEffect={false} />
         </View>
       )}

@@ -24,7 +24,7 @@ const ProductTrolleyCard = ({ product }: Props) => {
         </View>
         <View style={styles.textContainer}>
             <Text style={styles.title}>{product.title}</Text>
-            <Text style={styles.price}>{(quantity * product.price).toFixed(2)} €</Text>
+            <Text style={styles.price}>{(quantity * product.price).toFixed(0)} RP</Text>
             </View>
             <View style={styles.quantityContainer}>
               <Button text='-' onPressEffect={() => { removeProduct(product)}} hasHoverEffect={false} style={styles.littleButton} />

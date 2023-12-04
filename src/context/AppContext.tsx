@@ -6,11 +6,13 @@ import { Product } from "../interfaces/productInterfaces";
 //Definir como se ve, que información tendré aqui
 export interface AppState {
     isGrid: boolean;
+    RP: number;
 }
 
 //Estado inicial 
 export const appInitialState: AppState = {
     isGrid: false,
+    RP: 0
 }
 // Lo usaremos para decirle a React como se ve y que expone el context
 export interface AppContextProps {
@@ -20,6 +22,8 @@ export interface AppContextProps {
     trolleyItems: Product[];
     addProduct: (product: Product) => void;
     removeProduct: (product: Product) => void;
+    setRP: (RP: number) => void;
+    cleanProducts: () => void;
     
 }
 
@@ -35,13 +39,16 @@ export const AppProvider = ({ children }: any ) => {
     const [appState, setAppState] = useState(appInitialState)
 
     const gridOn = () => {
-        setAppState({ isGrid: true})
+        setAppState({ ...appState, isGrid: true})
     }
     const gridOff = () => {
-        setAppState({ isGrid: false })
+        setAppState({ ...appState, isGrid: false })
     }
     const addProduct = (product:Product) => {
         setTrolleyItems([...trolleyItems, product])
+    }
+    const setRP = (RP: number) => {
+        setAppState({ ...appState, RP: RP})
     }
     const removeProduct = (product:Product) => {
         const indexToRemove = trolleyItems.findIndex(item => item.title === product.title)
@@ -54,6 +61,9 @@ export const AppProvider = ({ children }: any ) => {
             setTrolleyItems(newData)
         }
     }
+    const cleanProducts = () => {
+        setTrolleyItems([])
+    }
 
     return(
         <AppContext.Provider value={{
@@ -62,7 +72,9 @@ export const AppProvider = ({ children }: any ) => {
             gridOff,
             trolleyItems,
             addProduct,
-            removeProduct
+            removeProduct,
+            setRP,
+            cleanProducts
 
         }}>
             { children}
