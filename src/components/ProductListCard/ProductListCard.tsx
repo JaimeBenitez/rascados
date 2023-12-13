@@ -19,7 +19,7 @@ const ProductListCard = ({ product, isGrid }: Props) => {
                 <Image source={images[product.filename]} style={styles.gridImage} />
                 <View style={styles.gridTextContainer}>
                     <Text style={styles.gridTitle}>{product.title}</Text>
-                    <Text style={styles.gridPrice}>{product.price} €</Text>
+                    <Text style={styles.gridPrice}>{product.price} RP</Text>
                 </View>
             </View>
         )

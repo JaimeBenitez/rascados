@@ -16,7 +16,8 @@ export const styles = StyleSheet.create({
         fontFamily: typography.semi,
         fontSize: 21,
         marginTop: 24,
-        marginLeft: 24
+        marginLeft: 24,
+        color: 'black'
     },
     category:{
         backgroundColor: colors.marine,
@@ -27,7 +28,8 @@ export const styles = StyleSheet.create({
         marginLeft: 24,
         marginBottom: 11,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        
     },
     categoryText:{
         color: colors.white,
@@ -37,8 +39,9 @@ export const styles = StyleSheet.create({
     description: {
         fontFamily: typography.normal,
         fontSize: 16,
-        marginLeft: 24,
-        marginTop: 20
+        marginHorizontal: 24,
+        marginTop: 20,
+        color: 'black'
     },
     button: {
         alignSelf: 'center',

@@ -2,32 +2,32 @@
   {
     "title": "Rascamiento musical: Relajación",
     "type": "rascamiento",
-    "description": "Rascamiento con musica relajante de fondo para asegurar la maxima relajación. Temas: Playlist Spa ",
+    "description": "Rascamiento con musica relajante de fondo para asegurar la maxima relajación.\nTemas: Playlist Spa.\nDuración: 15 min.\nLocalización: Todo el cuerpo ",
     "filename": "0.jpg",
     "height": 600,
     "width": 400,
-    "price": 1,
-    "rating": 4
-  },
-  {
-    "title": "Sweet fresh stawberry",
-    "type": "masaje",
-    "description": "Sweet fresh stawberry on the wooden table",
-    "filename": "1.jpg",
-    "height": 450,
-    "width": 299,
-    "price": 29.45,
-    "rating": 4
-  },
-  {
-    "title": "Asparagus",
-    "type": "vegetable",
-    "description": "Asparagus with ham on the wooden table",
-    "filename": "2.jpg",
-    "height": 450,
-    "width": 299,
-    "price": 18.95,
+    "price": 2,
     "rating": 3
+  },
+  {
+    "title": "Masaje musical: Relajación",
+    "type": "masaje",
+    "description": "Masaje con musica relajante de fondo para asegurar la maxima relajación. Temas: Playlist Spa. Duración: 15 min. Localización: Todo el cuerpo ",
+    "filename": "1.jpg",
+    "height": 600,
+    "width": 400,
+    "price": 2,
+    "rating": 3
+  },
+  {
+    "title": "Tratamiento musical: Relajación",
+    "type": "combo",
+    "description": "Combina lo mejor del rascamiento y masaje relajante en esta combo perfecta. Temas: Playlist Spa. Duración: 15 min. Localización: Todo el cuerpo ",
+    "filename": "2.jpg",
+    "height": 600,
+    "width": 400,
+    "price": 3,
+    "rating": 4
   },
   {
     "title": "Green smoothie",

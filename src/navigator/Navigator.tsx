@@ -26,7 +26,7 @@ export type ProductStackParams = {
 } 
 
 export type TabParams = {
-  Product: undefined,
+  Producto: undefined,
   Cart: undefined
 }
 
@@ -71,7 +71,7 @@ export const DashboardNavigator = () => {
     screenOptions={{
       tabBarActiveTintColor: colors.marine,
     }}>
-      <Tab.Screen name="Product" component={ProductStackNavigator} options={{headerShown: false,
+      <Tab.Screen name="Producto" component={ProductStackNavigator} options={{headerShown: false,
         tabBarIcon: ({size, color}) => (
           <Icon name='list-outline' size={size} color={color} />
         )
@@ -115,7 +115,7 @@ export const ProductStackNavigator = () => {
         },
         headerRight: () => { return(
           <View style={{ flexDirection:'row'}}>
-            <Text style={{ color: colors.white, fontSize: 20, marginTop: 5}}>{rp} RP</Text>
+            <Text style={{ color: colors.white, fontSize: 20, marginTop: 5, marginRight: 5}}>{rp} RP</Text>
             <TouchableOpacity onPress={ gridOff } style={isGrid ? {...styles.headerButton} : { ...styles.headerButton, ...styles.headerButtonActive }}>
               <Icon name="list-outline" color={isGrid ? colors.marine2 : colors.white } size={24} />
             </TouchableOpacity> 

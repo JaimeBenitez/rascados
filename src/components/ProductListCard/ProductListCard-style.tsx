@@ -31,7 +31,9 @@ export const styles = StyleSheet.create({
     title:{
         fontFamily: typography.semi,
         fontSize: 16,
-        marginBottom: 6
+        marginBottom: 6,
+        color: 'black',
+        flexWrap: 'wrap'
     },
     category:{
         backgroundColor: colors.marine,
@@ -71,6 +73,8 @@ export const styles = StyleSheet.create({
     gridTitle:{
         fontFamily: typography.semi,
         fontSize: 14,
+        color: 'black',
+        flexWrap: 'wrap'
     },
     gridPrice:{
         color: colors.marine,

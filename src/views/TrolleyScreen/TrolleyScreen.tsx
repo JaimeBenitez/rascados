@@ -10,6 +10,8 @@ import Button from '../../components/Button/Button';
 import { styles } from './TrolleyScreen-style';
 import storage from '../../storage/storage';
 import Toast from 'react-native-toast-message';
+import { sendEmail } from '../../hooks/sendMail';
+import { checkQuantity } from '../../utils/checkQuantity';
 
 
 interface Props extends StackScreenProps<TabParams,'Cart'>{}
@@ -19,6 +21,7 @@ const TrolleyScreen = ( {navigation}:Props) => {
   const { appState: { RP },trolleyItems, setRP, cleanProducts } = useContext(AppContext)
   const [ trolleyList, setTrolleyList ] = useState(trolleyItems)
   const [ totalPrice, setTotalPrice ] = useState(RPGastado)
+  
   
   const removeRepeatedItems = () => {
     let newArrayList: Product[] = []
@@ -70,7 +73,17 @@ const TrolleyScreen = ( {navigation}:Props) => {
       }
     });
     }
+  const convertToString = () => {
+    return trolleyList.map((item) => `${item.title} x ${checkQuantity(item, trolleyItems)} - ${checkQuantity(item, trolleyItems) * item.price}`)
+  }
   const storeData = () => {
+    const message = convertToString()
+    console.log(message)
+    sendEmail(
+      'saleb50@gmail.com',
+      'Servicio solicitado',
+      `${message}`
+    ).then(() => {
     console.log('New RP ' + (RPGastado + totalPrice))
     storage.save({
       key: 'RPGastado', 
@@ -85,6 +98,7 @@ const TrolleyScreen = ( {navigation}:Props) => {
       topOffset: 50,
     })
     cleanProducts()
+  })
   };
 
   if(trolleyList.length > 0){
@@ -110,7 +124,7 @@ const TrolleyScreen = ( {navigation}:Props) => {
     return(
       <View style={styles.container}>
         <Text style={styles.text}>El carrito esta vacío</Text>
-        <Button text='Añadir productos al carrito' onPressEffect={() => {navigation.navigate('Product')}} style={styles.button} hasHoverEffect={false} />
+        <Button text='Añadir productos al carrito' onPressEffect={() => {navigation.navigate('Producto')}} style={styles.button} hasHoverEffect={false} />
       </View>
     )
   }
